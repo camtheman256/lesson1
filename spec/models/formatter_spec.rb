@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Formatter do
 
-  it 'should convert binary to decimal'
   it 'should should format an integer' do
 
     formatter = Formatter.new
