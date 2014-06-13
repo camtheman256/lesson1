@@ -1,8 +1,24 @@
 class Formatter
   def int(value)
-    cheat(value)
+    real(value)
   end
+def real(value)
+  first = value / 2**3
+  value = value % 2**3
+  second = value / 2**2
+  value = value % 2**2
+  third = value / 2**1
+  value = value % 2**1
+  fourth = value / 2**0
+  first = first.to_s
+  second = second.to_s
+  third = third.to_s
+  fourth = fourth.to_s
+  return first + second + third + fourth
+end
+def best(value)
 
+end
   def cheat(value)
     case value
       when 0
@@ -41,6 +57,5 @@ class Formatter
         raise 'Numbers > 15 not supported'
     end
   end
-
 
 end
