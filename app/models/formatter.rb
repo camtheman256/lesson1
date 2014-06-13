@@ -1,6 +1,6 @@
 class Formatter
   def int(value)
-    real(value)
+    best(value)
   end
 def real(value)
   first = value / 2**3
@@ -14,12 +14,55 @@ def real(value)
   second = second.to_s
   third = third.to_s
   fourth = fourth.to_s
-  return first + second + third + fourth
+  first + second + third + fourth
 end
-def best(value)
+  def best(value)
+    power = 0
+    first = 0
+    output = ''
+    zero = false
+    negative = false
+    if value < 0
+      value = -value
+      negative = true
+    end
+    loop do
+      div = 2**power
+      first = value/div
+      break if first == 1
+      if first == 0 && power == 0
+        zero = true
+        break
+      end
+      power += 1
+    end
+    unless zero
+      first = first.to_s
+      output = first
+      loop do
+        break if power == 0
+        value = value % (2**power)
+        power -= 1
+        next_digit = value / (2**power)
+        next_digit = next_digit.to_s
+        output = output + next_digit
+      end
+    end
+    if zero
+      output = 0
+      output = output.to_s
+    end
+    if negative
+      output.to_i
+      output = -output
+      output = output.to_s
+    end
+    return output
+  end
 
-end
-  def cheat(value)
+
+
+    def cheat(value)
     case value
       when 0
         '0000'
@@ -57,5 +100,4 @@ end
         raise 'Numbers > 15 not supported'
     end
   end
-
 end
