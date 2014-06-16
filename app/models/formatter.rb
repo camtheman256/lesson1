@@ -53,7 +53,7 @@ end
       output = output.to_s
     end
     if negative
-      output.to_i
+      output = output.to_i
       output = -output
       output = output.to_s
     end

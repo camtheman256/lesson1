@@ -22,6 +22,7 @@ describe Formatter do
     formatter.int(14).should == '1110'
     formatter.int(15).should == '1111'
     formatter.int(5423).should == '1010100101111'
+    formatter.int(-5423).should == '-1010100101111'
 
   end
 end
