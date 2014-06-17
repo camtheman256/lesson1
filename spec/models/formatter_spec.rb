@@ -5,7 +5,7 @@ describe Formatter do
   it 'should should format an integer' do
 
     formatter = Formatter.new
-    #formatter.int( 0).should == '0000'
+    formatter.int( 0).should == '0000'
     formatter.int( 1).should == '0001'
     formatter.int( 2).should == '0010'
     formatter.int( 3).should == '0011'

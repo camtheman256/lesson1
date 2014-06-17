@@ -1,7 +1,22 @@
 class Formatter
   def int(value)
-    cheat(value)
+    real(value)
   end
+
+
+
+  def real(value)
+
+    result = ''
+    while value > 0
+      bit = value % 2
+      value = value / 2
+      result = bit.to_s + result
+    end
+
+    result.rjust(4,'0')
+  end
+
 
   def cheat(value)
     case value
