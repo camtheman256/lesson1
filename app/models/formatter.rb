@@ -57,7 +57,7 @@ end
       output = -output
       output = output.to_s
     end
-    return output
+    output
   end
 
 
