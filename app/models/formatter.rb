@@ -17,6 +17,9 @@ def real(value)
   first + second + third + fourth
 end
   def best(value)
+
+    raise "Unexpected negative number" if value < 0
+
     power = 0
     first = 0
     output = ''
